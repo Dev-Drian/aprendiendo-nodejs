@@ -1,13 +1,13 @@
-import { userSchema} from '../models/User'
+import { userSchema} from '../models/User.js'
 
 const User = userSchema
 
-exports.getAll = () => User.find();
+export const getAll = () => User.find();
 
-exports.getById = (id) => User.findById(id);
+export const getById = (id) => User.findById(id);
 
-exports.create = (data) => new User(data).save();
+export const create = (data) => new User(data).save();
 
-exports.update = (id, data) => User.findByIdAndUpdate(id, data, { new: true });
+export const update = (id, data) => User.findByIdAndUpdate(id, data, { new: true });
 
-exports.delete = (id) => User.findByIdAndDelete(id);
+export const deleteUser = (id) => User.findByIdAndDelete(id);

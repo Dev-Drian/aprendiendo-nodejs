@@ -1,14 +1,17 @@
-const express = require('express');
-const app = express();
 
-const userRoutes = require('./routes/userRoutes');
-const notFound = require('./middlewares/notFound');
+import express from 'express';
+const app = express();
+import router from './routes/UsersRoutes.js'
+import notFound from './middlewares/notFound.js'
+
+
+
 
 app.use(express.json());
 
-app.use('/api/usuarios',userRoutes);
+app.use('/api/usuarios', router);
 
 app.use(notFound)
 
 
-module.exports = app;
+export default app;
