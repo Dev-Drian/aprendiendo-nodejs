@@ -1,6 +1,4 @@
-import { userSchema} from '../models/User.js'
-
-const User = userSchema
+import { User } from '../models/User.js'
 
 export const getAll = () => User.find();
 
