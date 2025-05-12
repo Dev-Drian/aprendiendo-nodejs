@@ -10,11 +10,12 @@ import { authMiddleware } from './middlewares/auth.js'
 
 
 app.use(express.json());
-app.use(logger, authMiddleware)
+
+app.use(logger, authMiddleware);
 
 app.use('/api/usuarios', router);
 
-app.use(notFound)
+app.use(notFound);
 
 
 export default app;
