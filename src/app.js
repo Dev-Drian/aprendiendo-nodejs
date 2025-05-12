@@ -5,11 +5,12 @@ import router from './routes/UsersRoutes.js'
 import notFound from './middlewares/notFound.js'
 import { logger } from './middlewares/logger.js'
 import { authMiddleware } from './middlewares/auth.js'
-
+import authRoutes from './routes/authRoutes.js';
 
 
 
 app.use(express.json());
+app.use(authRoutes)
 
 app.use(logger, authMiddleware);
 
